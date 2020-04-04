@@ -11,8 +11,9 @@ dnsNames:
   - mshell-dev.com
   - www.mshell-dev.com
 acme:
-  http01:
-    ingressClass: nginx
-  domains:
-    - mshell-dev.com
-    - www.mshell-dev.com
+  confit:
+    - http01:
+        ingressClass: nginx
+      domains:
+        - mshell-dev.com
+        - www.mshell-dev.com
