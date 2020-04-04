@@ -5,11 +5,11 @@ metadata:
 spec:
   acme:
     config:
-      - domains:
+      - http01:
+        ingressClass: nginx
+        domains:
           - mshell-dev.com
           - www.mshell-dev.com
-        http01:
-          ingressClass: nginx
   commonName: mshell-dev.com
   dnsNames:
     - mshell-dev.com
