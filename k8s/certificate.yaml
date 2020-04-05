@@ -3,17 +3,18 @@ kind: Certificate
 metadata:
   name: mshell-dev-com-tls
 spec:
-  acme:
-    config:
-      - http01:
-        ingressClass: nginx
-        domains:
-          - mshell-dev.com
-          - www.mshell-dev.com
+  secretName: mshell-dev-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
   commonName: mshell-dev.com
   dnsNames:
     - mshell-dev.com
     - www.mshell-dev.com
-  issuerRef: letsencrypt-prod
-  kind: ClusterIssuer
-  secretName: mshell-dev-com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - mshell-dev.com
+          - www.mshell-dev.com
